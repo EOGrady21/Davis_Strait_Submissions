@@ -1,0 +1,22 @@
+---
+title: "Davis_Strait_Processing"
+author: "Emily O'Grady"
+date: "2024-03-21"
+output: html_document
+---
+
+Processing Outline
+
+Scope: Davis Strait data 2020-2022
+
+Goals: Archive in BioChem, Submit to OCADS
+
+TODO:
+BioChem
+- Bring to BCSC
+- Get cruises into OSC cruise?
+- Format data into BCD/BCS
+
+OCADS
+- format to OCADS
+- metadata pipeline for SDIS
