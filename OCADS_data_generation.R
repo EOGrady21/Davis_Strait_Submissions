@@ -4,7 +4,7 @@ shelf(tidyverse, readr, readxl)
 source('functions.R')
 
 # gather data files ----
-data_fns <- list.files('../data/', pattern = 'EO', full.names = TRUE)
+data_fns <- list.files('../data/', pattern = '2021', full.names = TRUE)
 
 # Load in dependencies
 
@@ -27,7 +27,7 @@ for (i in 1:length(data_fns)) {
   data <- readr::read_csv(data_fns[i], show_col_types = FALSE)
   
   # remove any NA rows
-  data <- data[-which(is.na(data$`Cruise ID`)), ]
+  #data <- data[-which(is.na(data$`Cruise ID`)), ]
   
   # pull out date columns and reformat
   data$date <- paste(data$year, data$month, data$day, sep = '-')
@@ -153,10 +153,10 @@ for (i in 1:length(data_fns)) {
     if (length(unique(expdata_qc[[qccolname]])) == 1) {
       if (unique(expdata_qc[[qccolname]]) == 9) {
         datacolname <- str_replace(qccolname, pattern = '_FLAG_W', replacement = '')
-        cat('Removing', datacolname, ', no non-missing data!  ')
+        cat('Removing', datacolname, ', no non-missing data!  \n')
         
         remove_ind <- grep(names(expdata_qc), pattern = datacolname)
-        remove_ind <- unique(c(remove_ind, grep(names(expdata_qc), pattern = qccolname)))
+        #remove_ind <- unique(c(remove_ind, grep(names(expdata_qc), pattern = qccolname)))
         
         cat('Columns removed: \n')
         cat(names(expdata_qc)[remove_ind], '\n')
