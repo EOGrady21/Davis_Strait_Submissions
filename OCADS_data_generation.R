@@ -8,11 +8,11 @@ data_fns <- list.files('../data/', pattern = '2021', full.names = TRUE)
 
 # Load in dependencies
 
-varmap <- read_csv('../extdata/data_column_dictionary.csv',
+varmap <- read_csv('extdata/data_column_dictionary.csv',
                           show_col_types = FALSE)
-flag_map <- read_csv('../extdata/flags.csv',
+flag_map <- read_csv('extdata/flags.csv',
                      show_col_types = FALSE)
-expos <- read_csv('../extdata/expocodes.csv',
+expos <- read_csv('extdata/expocodes.csv',
                   show_col_types = FALSE)
 
 # Check variable names in raw data

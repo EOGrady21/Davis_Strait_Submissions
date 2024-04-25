@@ -1,0 +1,12 @@
+﻿flag,biochem_definition,WOCE_btl_definition,WOCE_CTD_definition
+0,No QC Performed,,
+1,QC has been performed; element appears to be correct,Sample drawn from bottle but analysis not recieved,Sample drawn from bottle but analysis not recieved
+2,QC has been performed; element appears to be inconsistent with other elements.,QC Performed: Acceptable Measurement,QC Performed: Acceptable Measurement
+3,QC has been performed; element appears to be doubtful.,QC Performed: Questionable Measurement,QC Performed: Questionable Measurement
+4,QC has been performed; element appears to be erroneous.,QC Performed: Bad Measurement,QC Performed: Bad Measurement
+5,The value has been changed as a result of QC,QC Performed: Not Reported,QC Performed: Not Reported
+6,Value is above or below detection limit of measuring instrument,Mean of replicate measurements,Mean of replicate measurements
+7,,Manual chromatographic peak measurement,Manual chromatographic peak measurement
+8,QC has been performed by the originator.,Irregular digital chromatographic peak integration,Irregular digital chromatographic peak integration
+9,The value of the element is missing.,Not sampled,Not sampled
+,,,No QC Performed

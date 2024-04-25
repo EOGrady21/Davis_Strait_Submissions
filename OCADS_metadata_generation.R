@@ -5,22 +5,22 @@ library(openxlsx)
 library(tidyverse)
 
 # read in other dependency tables
-OA_lab_meta <- read_xlsx('../extdata/OA_lab_metadata_CEG.xlsx',
+OA_lab_meta <- read_xlsx('extdata/OA_lab_metadata_CEG.xlsx',
                          sheet = 1)
 
-crm <- read_csv('../extdata/CRM.csv',
+crm <- read_csv('extdata/CRM.csv',
                 show_col_types = FALSE)
 
-investigators <- read_xlsx("../extdata/investigators.xlsx")
+investigators <- read_xlsx("extdata/investigators.xlsx")
 
-additional_vars <- read_xlsx('../extdata/additional_variables.xlsx')
+additional_vars <- read_xlsx('extdata/additional_variables.xlsx')
 
 # pull mission level info
-general_md <- read_xlsx('../DS_OCADS_metadata_KAS.xlsx',
+general_md <- read_xlsx('extdata/DS_OCADS_metadata_KAS.xlsx',
                         sheet = 1)
 
 # get blank metadata form
-md_blank <- read_xlsx('../SubmissionForm_OADS_v7.xlsx', sheet = 1, skip = 1)
+md_blank <- read_xlsx('extdata/SubmissionForm_OADS_v7.xlsx', sheet = 1, skip = 1)
 md_filled <- md_blank
 
 data_fns <- list.files("../data/OCADS/", pattern = '_data', full.names = TRUE)

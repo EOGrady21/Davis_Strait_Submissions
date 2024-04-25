@@ -1,0 +1,119 @@
+Seq | Data_Center_Code | Name | Description
+90000066 | 20 | Alkalinity_DOE | Oceanic carbon dioxide quality control:  DOE handbook of Methods; SOP 3 - determination of total alkalinity in sea water
+90000122 | 30 | Alkalinity_PICES2007SOP3b | Dickson, AG, CL Sabine, JR Christian (eds) 2007. Guide to best practices for ocean CO2 measurements. PICES Special Publications 3, 191 pp.
+90000045 | 30 | Ammonia / Alpkem  | EPA, 1984, Methods for chemical analysis of water and wastewater. EPA-600 / 4-79-020, « Nitrogen, Ammonia, » Method 350.1 (Colorimetric, Automated Phenate) STORET No. Total 00610, Dissolved 00608.
+90000130 | 30 | Ammonia / Spectrophotometer | Aminot,Chaussepied (1983) Manuel des analyses chimiques en milieu marin. Centre National pour l'exploitation des océans, Brest, 395 pp
+90000044 | 30 | Ammonia / Technicon | Van Slyke, DD and AJ Hillem, 1933, Ammonium in water and seawater, Biochem 102, p. 499
+90000053 | 20 | ATP_Determination | Holm-Hansen & Booth, 1966, L&O 11:510-519
+90000005 | 90 | Autosal salinometer | Autosal salinometer, calibrated against standard seawater.
+90000038 | 20 | BIO_DO_1977 | Levy, E.M, C.C. Cunningham, C.D. Conrad and J.D. Moffat. 1977. A titration apparatus for the determination of dissolved Oxygen in seawater. J.Fish. Res. Board. Can. 34:2218-2220.
+90000079 | 20 | BIO_DO_WOCE91 | Culberson, C.H., Knapp, G., Stalcup, M., Williams, R.T., and Zemlyak, F., ¿A comparison of methods for the determination of dissolved oxygen in seawater,¿ Report WHPO 91-2, WOCE Hydrographic Programme Office (Aug 1991)
+90000036 | 20 | BIO_Technicon | Strain,P.M. and P.M.Clement. 1996. Nutrient and dissolved Oxygen concentrations in the LeTange Inlet, New Brunswick, in the Summer of 1994. Can.Data Rep. Fish. Aquat. Sci. 1004
+90000063 | 20 | C13 method | C13 method
+90000087 | 20 | C14_Platt_Irwin_1971 | Platt, T and B. Irwin (1971) Phytoplankton production and nutrients in Bedford Basin, 1969-70.  Fish.Res.Bd.Canada Tech.Rept.No.247
+90000110 | 20 | Calanus_EggProduction | Head et al
+90000080 | 20 | CalorificMeasurement1 | Parr bomb calorimeter (see Brawn et al 1968. JFRB Caloric content of the standing crop and epibenthic invertebrates of st. Margaret's Bay, NS.
+90000048 | 20 | Calorimetry | Bomb Calorimeter
+90000043 | 30 | CHLA/PHAEO_LG | Holm-Hansen, O, CJ Lorenzen, RW Holmes, JD Strickland (1965) Fluorometric determination of chlorophyll. J Cons Cons Int Explor Mer, 30 : 3-15; Sample filtered so the pigments are from cell population >5um
+90000032 | 30 | CHN determination | Ehrhardt, M (1983) Determination of particulate organic carbon and nitrogen, p. 268-275. In K Grasshoff, M Ehrhardt, K Kremling (eds), Methods of seawater analysis, 2nd revised and extended edition. Verlag Chemie GmbH, Weinheim. 419 pp
+90000082 | 20 | Combustion_1 | sample heated to 600C for period of time
+90000085 | 20 | CSAS 2008/044 | Harrison et al CSAS Res Doc 2008/044 Optical, chemical and biological oceanographic conditions in the Maritimes in 2007
+90000109 | 20 | CTD CDOM sensor | CDOM sensor, part of the Sea-Bird CTD package
+90000004 | 90 | CTD conductivity sensor | 
+90000017 | 30 | CTD Fluorometer | Insitu fluorometer calbrated and part of the CTD package
+90000018 | 30 | CTD Oxygen Sensor | Calibrated sensor as part of the CTD package
+90000021 | 30 | CTD PAR meter | Photosynthically active radiation sensor attached to CTD package
+90000068 | 30 | CTD pH sensor (calibrated) | pH sensor, part of the CTD package, calibrated with lab measures
+90000069 | 30 | CTD pH sensor (not calibrated) | pH sensor, part of the CTD package, not calibrated with lab measures
+90000003 | 90 | CTD pressure sensor | 
+90000015 | 30 | CTD Temperature sensor | Temperature measured at depth using calibrated sensor as part of CTD package
+90000020 | 30 | CTD transmissometer | 
+90000077 | 20 | Deniges_1 | modification of the Deniges colorimetric method (Calanus Series JFRB vol 16 no4, 1959)
+90000047 | 30 | Density / sigma-t | density (calculated from ctd pressure, temp, salinity)-1000
+90000057 | 90 | DNA_analysis1 | Canadian Data Report of Fish and Aquatic Sciences #213 Phytoplankton Productivity Experiments and Nutrient Measurements in the Labrador Sea, Davis Strait
+90000011 | 20 | Dry Oxidation for TOC | MacKinnon, M.D., 1978, Marine Chemistry 7:17-37
+90000049 | 30 | DryWeight Biomass | Dry weight of a species obtained from a weight versus length regression
+
+90000112 | 20 | DryWeight_1 | sample dried in a 60C oven and then weighed on an electrobalance
+90000071 | 20 | Guay and Faulkner | Barium analytical method; Guay and Falkner, DSRII: 44, 1543-1569 (1997)
+90000010 | 20 | High Combustion IR | High combustion oxidation of Carbon to CO2 and measurement by Infra Red spectrophotometry
+90000022 | 30 | HolmHansen | Holm-Hansen, O, CJ Lorenzen, RW Holmes, JD Strickland (1965) Fluorometric determination of chlorophyll. J Cons Cons Int Explor Mer, 30 : 3-15.
+90000035 | 20 | HPLC | High Performance Liquid Chromatography (HPLC) assay of acetone extraction (GFF filtered).  Head, E.J., Horne, E.P.W. (1993) Pigment transformation and vertical flux in an area of convergence in the North Atlantic.  Deep-Sea Res. II. 40:329-346
+90000074 | 20 | IncRad_Pyranometer | Total incident radiation measured with an Eppley 40 junction pyranometer.  Output recorded on strip chart recorder.  Hourly or daily radiation estimated by integrating the record with a planimeter.
+90000061 | 90 | Induction Salinometer | Salinity determined using an induction salinometer
+90000072 | 20 | IOS_Nutrients | J. Barwell-Clarke and F. Whitney. 1996. Institute of Ocean Sciences  Nutrient Methods and Analysis. Canadian Technical Report of Hydrography and Ocean Sciences, No. 182, 43 p
+90000108 | 20 | JGOFS protocols | Knap, A., A. Michaels, A. Close, H. Ducklow and A. Dickson (eds.) (1996) Protocols for the Joint Global Ocean Flux Study (JGOFS) Core Measurements. JGOFS Report Nr. 19, vi+170 pp. Reprint of the IOC Manuals and Guides No. 29, UNESCO 1994.
+90000086 | 20 | Kerouel_Aminot1997 | Kerovel, R. and A. Aminot. 1997 Fluorometric determination of ammonia in sea and estuarine waters by direct segmented flow analysis.  Mar. Chem. 57:265-275
+90000055 | 90 | mass_spectrometric_1 | mass spectrometric analysis, JGOFS Report No 19. 1996.  Protocols for the Joing Global Ocean Flux Study (JGOFS) Core Measurements.  Reprinting of IOC Manuals and Guides No 29, UNESCO, 1994. IOC, Bergen.  
+
+90000111 | 20 | MicroscopeAnalysis | Microscope methods
+90000088 | 20 | Mullin_Riley(1955) | The colorimetric determination of silicate with special reference to sea and natural waters.  Analytica Chim. Acta. 12: 162-176
+90000031 | 30 | Nitrate+Nitrite / Alpkem | American Public Health Association (1989) Standard Methods for the examination of water and wastewater. 17th edition, pp. 4-185, Washington D.C.
+90000027 | 30 | Nitrate+Nitrite / Technicon | Armstrong, FAJ, CR Stearns, JDH Strickland (1967) The measurement of upwelling and subsequent biological processes by means of the Technicon Autoanalyzer and associated equipment. Deep-Sea Res 14(3) 381-389
+90000028 | 30 | Nitrite / Technicon | American Public Health Association (1971) Standard Methods for the examination of water and wastewater. 13th edition, pp. 240-243, Washington D.C.
+90000001 | 90 | not applicable | 
+90000002 | 90 | not assigned | 
+90000006 | 90 | O2 electrode | Polarographic oxygen electrode applied to a discrete sample
+90000067 | 20 | Parsons_etal(1984) | Parsons, T.R., Maita, Y., Lalli, C.M. A manual of chemical and biological methods for seawater analysis. 1984. Pergamon Press, New York
+90000034 | 30 | Particulate org/inorg matter | American Public Health Assoc. (1985) Fixed and volatile solids ignited at 550, pp.97-98, In Standard Methods for the examination of water and wastewater, 16th edition, Washington D.C
+90000128 | 20 | pCO2 | Neill, Craig, Kenneth M. Johnson, Ernie Lewis, Douglas W. R. Wallace, 1997. Accurate Headspace Analysis of fCO2 in Discrete Water Samples Using Batch Equilibration.  Limnology and Oceanography, Vol. 42, No. 8, 1774-1783.
+90000126 | 30 | pH_A&C1983 | Aminot, A, M Chaussepied (1983) Manuel des analyses chimiques en milieu marin. Centre National pour l¿exploitation des océans, Brest, 395 pp.
+90000127 | 30 | pH_A&C1983/L&W1998 | Aminot,Chaussepied(1983)Manuel des analyses chimiques en milieu marin. Centre National pour l'exploitation des océans, Brest, 395 pp./Lewis, E, and DWR Wallace(1998)CO2SYS-Program developed for CO2 system 
+90000124 | 30 | pH_PICES2007SOP6b | Dickson, AG, CL Sabine, JR Christian (eds) 2007. Guide to best practices for ocean CO2 measurements. PICES Special Publications 3, 191 pp.
+90000125 | 30 | pH_PICES2007SOP6b/L&W1998 | Dickson, AG, CL Sabine, JR Christian (eds) 2007. Guide to best practices for ocean CO2 measurements. PICES Special Publications 3, 191 pp./Lewis, E, and DWR Wallace (1998) CO2SYS-Program developed for CO2 system 
+90000030 | 30 | Phosphate / Alpkem | EPA (1984a) Methods for chemical analysis of water and wastewater. EPA-600 / 4-79-020, « Phosphorus, all forms, » Method 365.1 (Colorimetric, Automated Ascorbic Acid)
+90000026 | 30 | Phosphate / Technicon | Murphy, J, JP Riley (1962) A modified single solution method for the determination of phosphate in natural waters. Anal Chim. Acta 27 : 30.
+90000073 | 20 | Platt_etal_1980 | Platt, T., C.L. Gallegos and W.G. Harrison. 1980. Photoinhibition of photosynthesis in natural assemblages of marine phytoplankton. J. Mar. Res 38(4):687-701
+90000075 | 20 | Platt_Irwin_1968 | Platt and Irwin.  1968. FRB Tech Report no 77.  Primary productivity measurements in St. Margaret's bay, 1967
+90000076 | 20 | Potentiometric_Titration_1 | Potentiometric titration with curve-fitting analysis procedure.  Barron, J.L.et al (1983) A comparison of computer methods for seawater alkalinity titrations. Deep-Sea Research, 30, 441-448.   and  Johansson, O. and Wedborg, M. (1982)
+90000064 | 20 | PRM_Equation1 | Iz=y*It*Ki*Ks*e^-(kCHL * CHL/2)
+90000062 | 20 | PRM_Light_Dark_Bottle_method | Phytosynthetic rate measurement (PRM). Phytosynthesis by the "light and dark bottle" method - measure changes of dissolved oxygen
+90000059 | 90 | Protein_analysis1 | Fluorometric method based on the fluorescamine reaction described by Packard and Dortch(1975)  
+
+90000070 | 20 | Purge-and-Trap | Purge and trap system
+90000016 | 30 | Reversing Themometer | Specifics unknown
+90000113 | 30 | Richards with Thomppson (1952) | Richards with Thompson (1952) as described in Strickland, JDH, TR Parsons (1968) A practical handbook of seawater analysis, First edition. Fish Res Board Can, Bulletin 167, 311 pp.
+90000058 | 90 | RNA_analysis1 | Canadian Data Report of Fish and Aquatic Sciences #213 Phytoplankton Productivity Experiments and Nutrient Measurements in the Labrador Sea, Davis Strait
+90000029 | 30 | Silicate / Alpkem | American Public Health Association (1989) Standard Methods for the examination of water and wastewater. 17th edition, pp. 4-185, Washington D.C.
+90000025 | 30 | Silicate / Technicon | Strickland, JDH, TR Parsons (1972) A Practical Handbook of Seawater Analysis, second edition. Fish Res Board Can, Bulletin 167, 310 pp
+90000083 | 20 | Solorzano_1969 | ammonia analysis using the phenolhypochlorite method of Solorzano (1969)
+90000106 | 20 | SOP_6b | SOP 6b.  Determination of the pH of sea water using the indicator dye m-cresol purple.  Dickson, A.G., Sabine, C.L. and Christian, J.R. (Eds.) 2007. Guide to best practices for Ocean CO2 Measurements.  PICES Special Publication 3, 191 pp.
+90000054 | 90 | spectrophotometric_1 | spectrophotometric analysis (Dugdale and Goering, 1967)
+90000037 | 20 | Stable Isotope | F.C.Tan and P.M. Strain 1979. Carbon Isostope of Particulate Matter in the Gulf of St. Lawrence. J. Fish. Res. Board Can. 36:678-682
+90000081 | 20 | StricklandandParsons(1968) | Strickland, JDH, TR Parsons (1968) A manual of sea water analysis. Second edition.  Fish Res Board Can, Bulletin 125,  203 pp
+90000050 | 20 | StricklandandParsons(1972) | Strickland, JDH, TR Parsons (1972) A Practical Handbook of Seawater Analysis, second edition. Fish Res Board Can, Bulletin 167, 310 pp
+90000078 | 20 | Tech_AutoAnalyzerII | Gordon, L.I., Jennings, J.C., Jr., Ross, A.A., and Krest, J.M., ¿A suggested Protocol for Continuous Flow Automated Analysis of Seawater Nutrients in the WOCE Hydrographic Program and the Joint Global Ocean Fluxes Study,¿ Oregon State University Coll
+90000065 | 20 | TIC_DOE | Oceanic carbon dioxide quality control:  DOE handbook of Methods; SOP 2 - determination of total dissolved inorganic carbon in sea water
+90000123 | 30 | TIC_PICES2007SOP2 | Dickson, AG, CL Sabine, JR Christian (eds) 2007. Guide to best practices for ocean CO2 measurements. PICES Special Publications 3, 191 pp.
+90000060 | 20 | Tot Suspended Matter:nonFiltr | American Public Health Assoc. (1985) Total non-filtrable residue (Total Suspended Matter),In Standard Methods for the examination of water and wastewater, 16th Ed., Wash.,DC.
+90000033 | 30 | Total suspended matter: determ | Strickland, JDH, TR Parsons (1972) A Practical Handbook of Seawater Analysis, second edition (Determination of the weight of microscopic materials in seawater). Fish Res Board Can, Bulletin 167, 310 pp.
+90000089 | 20 | TraceMetal_A1 | APDC/DDDC Freon extraction with back extraction into 1% HNO3 - analysis  - GFAAS Zeeman
+90000098 | 20 | TraceMetal_A10 | APDC MIBK extraction, analysis of extract by GFAAS
+90000099 | 20 | TraceMetal_A11 | 8-Hydroxyquinoline/MIBK extraction, analysis by GFAAS
+90000100 | 20 | TraceMetal_A12 | APDC MIBK extraction, analysis of extract by flame AAS
+90000101 | 20 | TraceMetal_A13 | APDC/DDDC Freon extraction with back extraction into 1% HNO3 - analysis  - ICP-MS (contract)
+90000102 | 20 | TraceMetal_A14 | direct analysed by ICP-MS (contract)
+90000103 | 20 | TraceMetal_A15 | On site analysis with WTW Conductivity Meter  LF 197-S
+90000104 | 20 | TraceMetal_A16 | on site analysis with Orion 840 Dissolved Oxygen Meter 
+90000105 | 20 | TraceMetal_A17 | on site analysis with Orion 230A pH Meter using a Ross ""Sure-Flow""® pH electrode"
+90000115 | 20 | TraceMetal_A18 | Graphite Furnace Atomic Absorption Spec. (GFAAS) no Zeeman correction - direct analysis after dilution
+90000117 | 20 | TraceMetal_A19 | Graphite Furnace Atomic Absorption Spec. (GFAAS), liquid ion exchange alamine 336
+90000090 | 20 | TraceMetal_A2 | 8-Hydroxyquinoline/MIBK extraction -analysis  - GFAAS Zeeman
+90000119 | 20 | TraceMetal_A20 | co-precipitation with Fe hydroxide
+90000121 | 20 | TraceMetal_A21 | Subsample of dried core section, Total HF digestion- Equivalent to USEPA method 3052
+90000091 | 20 | TraceMetal_A3 | reductive precipitation using Fe/Pd with NaBH4, resolution in HNO3 - analysis - GFAAS Zeeman
+90000092 | 20 | TraceMetal_A4 | weighed on 5 place micro balance in clean laboratory
+90000093 | 20 | TraceMetal_A5 | ample filters digested (Teflon bomb)  HNO3/HF, heated to dryness, re-dissolved in HNO3 - analysis - ICP-MS (contract) 
+90000094 | 20 | TraceMetal_A6 | T-Hg -  EPA Method 1631, Mercury in Water by Oxidation, Purge and Trap, and Cold Vapor Atomic Fluorescence spectrometry
+90000095 | 20 | TraceMetal_A7 | M-Hg -  EPA Method 1630, Methyl Mercury in Water by Distillation, Aqueous Ethylation, Purge and Trap, and Cold Vapor Atomic Fluorescence spectrometry
+90000096 | 20 | TraceMetal_A8 | analysed at BIO using a Guildline  Autosal Salinometer to determine practical salinity as defined by the 1980 UNESCO/ICES/SCOR/IAPSO Joint Panel
+90000097 | 20 | TraceMetal_A9 | direct analysis after dilution -analysis  - GFAAS Zeeman
+90000014 | 90 | Turner Fluorescence | Chlorophyll calibrated Turner Fluorescence
+90000000 | 90 | unknown | 
+90000046 | 30 | Urea / Technicon | Price, NM, PJ Harrison, 1987, Comparison of methods for the analysis of dissolved urea in seawater. Mar Biol 94:307-317
+90000040 | 30 | Urea_IML_Tech | Price, NM, PJ Harrison, 1987, Comparison of methods for the analysis of dissolved urea in seawater. Mar Biol 94:307-317
+90000107 | 20 | Water and Wasterwater 20th Ed | Standard methods for the examination of water and wastewater:  20th Edition, 1998
+90000023 | 30 | Welschmeyer CHLA | Welschmeyer, NA (1994) Fluorometric analysis of chlorophyll a in the presence of chlorophyll b and pheopigments. Limnol Oceanogr 39(8): 1985-1992
+90000129 | 30 | Wet Oxydation for TOC | Bunch, J.N. 1987. Effects of petroleum releases on bacterial numbers and microheterotrophic activity in the water and sediment of an arctic marine ecosystem. Arctic 40 (Suppl. 1): 172-183
+90000019 | 30 | Winkler Titration | Carrit, DE and JH Carpenter. 1966. Comparison and evaluation of the currently employed modifications of the Winkler method for determining dissolved oxygen in sea-water; a NASCO Report, Sears Foundation. J Mar Res 24(3) 286-318.
+90000084 | 20 | Winneberger_1963 | Winneberger, J.H., J.H. Austin and C.A. Klett. 1963.  Membrane filter weight determination. J. Water Pollution Control Fed. 35:807-813

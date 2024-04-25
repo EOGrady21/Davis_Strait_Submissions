@@ -1,0 +1,8 @@
+Seq | Data_Center_Code | Name | Description
+90000002 | 90 | female | 
+90000003 | 90 | indeterminate | 
+90000001 | 90 | male | 
+90000006 | 20 | reassign | 
+90000000 | 90 | UNASSIGNED | 
+90000005 | 90 | undeterminable | 
+90000004 | 90 | unknown | 

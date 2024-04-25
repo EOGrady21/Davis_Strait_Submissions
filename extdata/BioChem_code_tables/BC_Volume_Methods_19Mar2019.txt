@@ -1,0 +1,17 @@
+Seq | Data_Center_Code | Name | Description
+90000003 | 90 | calculated | volume calculated using depth, wire angle and net mouth opening
+90000015 | 20 | conversion1 (per millilitre) | volume value set to convert data to units per cubic metre; data values are in units of per millilitre; volume = 0.000001m³ (which is 1 mL). The query will return 1000000 count/m³ for 1 bacteria/mL
+90000016 | 20 | conversion2 (per litre) | volume value set to convert data to units per cubic metre; data values are in units of per litre; volume = 0.001 m³ (which is 1L). The query will return 1000 count/m³ for 1 cell/L
+90000004 | 90 | estimated | estimate of volume calculated using depth and gear mouth opening (wire angle ignored)
+90000008 | 90 | flag | data entered as previously calculated values; volume filtered not recorded
+90000001 | 90 | flow meter | electronic readout of volume of water filtered
+90000002 | 90 | flow meter | volume calculated from recorded revolutions and flow meter calibrations
+90000012 | 30 | flow meter | volume calculated from recorded revolutions and flow meter calibrations; NOTE:  one of the variables/factors in the equation may be suspect and the result may be "low.
+90000013 | 20 | flow meter | data report indicates use of flow metres and the report also provided the volume of water filtered.
+90000009 | 90 | flow meter bad | flow meter not working
+90000014 | 20 | gear_specific | gear specific; example refer to box core sample analysis methodology
+90000010 | 90 | NA | not applicable; perhaps net lost; perhaps data from a bottle
+90000006 | 90 | qualitative | unable to calculate volume of water filtered
+90000007 | 90 | unassigned | this field should be updated with correct value
+90000005 | 90 | unknown | method used to calculate volume of water filtered was not recorded
+90000011 | 90 | volume should be recalculated | use raw data and recalculate volume

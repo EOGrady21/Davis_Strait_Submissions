@@ -1,0 +1,18 @@
+Seq | Data_Center_Code | Name | Description
+90000007 | 20 | damaged during analysis | sample damaged during sort
+90000008 | 20 | do not analyse | sample not to be sorted for various reasons
+90000016 | 20 | Experimental | Sample collected for experimental purposes: Not analyzed for species abundance
+90000006 | 20 | hit bottom | sample hit bottom and not sorted
+90000004 | 20 | lost | sample lost in transit
+90000015 | 20 | Mixed analysis | Sample completely analyzed (all taxa are identified) but there was a mix of quantitative and qualitative analysis. (all the taxa of a certain group were quantitatively analyzed and for all the others presence was noted)
+90000000 | 90 | not analysed | 
+90000009 | 20 | not representative | sample not representative
+90000010 | 20 | qualitative analysis | qualitative only, see species/cruise comments
+90000001 | 90 | quant analysis complete | quantitative
+90000002 | 90 | quant analysis incomplet | quantitative selected groups analysed
+90000013 | 20 | quantitative (bacteria counts) | for method refer to Bunch 1979 Fisheries and Marine Service Manuscript Report no 1515, April 1979
+90000011 | 20 | quantitative (Flow Cytometry) | counts from flow cytometer
+90000012 | 30 | quantitative analysis | quantitative complete or selected groups analyzed (not defined, example for legacy datasets taxonomic groups may have been identified separately and it is unclear if when the results were combined if all groups were examined )
+90000005 | 20 | rotten | sample rotten
+90000003 | 90 | unknown | sorting info not available
+90000014 | 20 | Vilks_1970 | foraminifera quantitative analysis

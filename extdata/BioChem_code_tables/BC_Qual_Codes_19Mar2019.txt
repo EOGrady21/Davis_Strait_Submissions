@@ -1,0 +1,9 @@
+QC_Code | Data_Center_Code | QC_Definition
+0 | 30 | No quality control (QC) has been performed on this element
+1 | 90 | QC has been performed; element appears to be correct
+2 | 90 | QC has been performed; element appears to be inconsistent with other elements.
+3 | 90 | QC has been performed; element appears to be doubtful.
+4 | 90 | QC has been performed; element appears to be erroneous.
+5 | 90 | The value has been changed as a result of QC
+8 | 20 | QC has been performed by the originator.
+9 | 90 | The value of the element is missing.

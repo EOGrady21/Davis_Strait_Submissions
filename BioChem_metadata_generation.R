@@ -2,6 +2,8 @@
 
 # read in dictionary table
 
+# gather from OSC cruise
+
 # read in all original data sources
 # data
 # metadata

@@ -11,12 +11,21 @@ Scope: Davis Strait data 2020-2022
 
 Goals: Archive in BioChem, Submit to OCADS
 
-TODO:
-BioChem
-- Bring to BCSC
-- Get cruises into OSC cruise?
-- Format data into BCD/BCS
+# Data Cleaning 
 
-OCADS
-- format to OCADS
-- metadata pipeline for SDIS
+Some initial data cleaning was done including 
+- removing columns for variables without any data (empty data and flag columns)
+- adding sounding column with data from log sheets
+
+
+# OCADS Submission
+
+Data was run through OCADS data and metadata generation scripts. Then submitted via SDIS (the OCADS submission platform).
+
+# BioChem Submission
+
+In progress!
+
+First, cruise information was submitted to Jay Bugden to be loaded into OSC cruise. 
+(see osccruise_davisstrait.xlsx)
+

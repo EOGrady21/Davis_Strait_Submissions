@@ -1,0 +1,24 @@
+Seq | Data_Center_Code | Name | Description
+90000015 | 20 | cool (5) and in dim light | sample kept cool (5C) and in dim light
+90000005 | 90 | frozen | frozen (temperature not specified)
+90000009 | 90 | frozen (-196) | frozen in liquid nitrogen at -196 C
+90000011 | 90 | frozen (-20) | Kept frozen in standard chest freezer at -20 C for undisclosed period of time
+90000003 | 90 | frozen (-20) > 1 year | frozen at - 20 C for more than a year
+90000007 | 90 | frozen (-80) | frozen at - 80 C
+90000012 | 90 | frozen and dessicated | stored at -20C in a dessicator
+90000013 | 90 | frozen and/or dessicated | sample frozen or dessicated, details not specified
+90000001 | 90 | not applicable | 
+90000002 | 90 | not assigned | 
+90000017 | 20 | opaque jars | samples stored in opaque containers
+90000004 | 90 | refrigerated | refrigerated (temperature not specified)
+90000006 | 90 | refrigerated (4) < 6months | refrigerated at 4 C for no more than 6 months
+90000014 | 20 | room temp or refrigerated | stored at room temperature or refrigerated
+90000008 | 90 | room temperature | room temperature
+90000016 | 20 | see preservation | see preservation for storage details
+90000018 | 20 | TraceMetal_S1 |  LDPE bottle, double bagged in ployethylene
+90000019 | 20 | TraceMetal_S2 | clean polystyrene petri dish, in clean lab
+90000020 | 20 | TraceMetal_S3 | Teflon bottle, double bagged in plastic
+90000021 | 20 | TraceMetal_S4 | glass bottle, plastic cap with liner
+90000022 | 20 | TraceMetal_S5 | LDPE bottle
+90000024 | 20 | TraceMetal_S6 | Plastic envelope
+90000000 | 90 | unknown | 
