@@ -21,7 +21,7 @@ for (i in 1:length(data_fns)) {
 data <- read_csv(data_fns[i], show_col_types = FALSE)
 # TODO check for empty columns before translating
 
-# translate columns
+# translate columns ----
 bcd_dict_y <- bcd_dict[bcd_dict$original %in% names(data),]
 
 # Create a named vector from the dictionary
@@ -95,26 +95,40 @@ bcd_data <- data[names(data) %in% bcd_dict$biochem[bcd_dict$tag != 'metadata']]
 
 bcd_wide <- cbind(bcd_meta, bcd_data)
 
-data_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('btl', 'ctd')])]
-qc_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag == 'qc'])]
-
 # make all data columns numeric
 bcd_wide <- bcd_wide %>%
   mutate_at(vars(data_cols), as.numeric)
 
-bcd_long <- bcd_wide %>%
-  pivot_longer(., all_of(data_cols), names_to = 'METHOD', values_to = 'DATA_VALUE') %>%
-  pivot_longer()
-# pull out QC columns
+# seperate column types
+data_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('btl', 'ctd')])]
+qc_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag == 'qc'])]
+metadata_cols <- names(bcd_wide)[-which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('ctd', 'btl', 'qc')])]
 
 
+# Separate data and qc columns into two dataframes
+data_df <- bcd_wide %>% select(all_of(c(metadata_cols, data_cols)))
+qc_df <- bcd_wide %>% select(all_of(c(metadata_cols, qc_cols)))
 
+# Pivot both dataframes to long format
+data_long <- data_df %>% pivot_longer(cols = all_of(data_cols), names_to = "METHOD", values_to = "DATA_VALUE")
+qc_long <- qc_df %>% pivot_longer(cols = all_of(qc_cols), names_to = "METHOD", values_to = "DATA_QC_CODE")
+
+# Remove the '_qc' suffix from the METHOD column in the qc_long dataframe
+qc_long$METHOD <- str_remove(qc_long$METHOD, "_qc")
+
+# Join the data and qc dataframes
+bcd_long <- left_join(data_long, qc_long, by = c("METHOD", as.character(metadata_cols)))
+
+
+# Add more metadata in long format ----
 # DIS_HEADR_GEAR_SEQ
+# generate based on dictionary tag?
+
 
 # Depth?
+# calculate from pressure?
 
-
-# translate flags
+# translate flags ----
 
 # add base flags (1s, 9s)
 
