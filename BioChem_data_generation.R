@@ -5,9 +5,9 @@ source('functions.R')
 
 
 # read in dictionary tables
-bcs_dict <- readxl::read_xlsx(here('../', 'extdata', 'biochem_dictionary.xlsx'), sheet = 'BCS')
-bcd_dict <- readxl::read_xlsx(here('../', 'extdata', 'biochem_dictionary.xlsx'), sheet = 'BCD')
-expos <- read_csv('../extdata/expocodes.csv', show_col_types = FALSE)
+bcs_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'), sheet = 'BCS')
+bcd_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'), sheet = 'BCD')
+expos <- read_csv('extdata/expocodes.csv', show_col_types = FALSE)
 
 # read in original data
 # TODO make this more reproducible, cleaner, maybe file select
