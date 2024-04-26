@@ -5,8 +5,10 @@ source('functions.R')
 
 
 # read in dictionary tables
-bcs_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'), sheet = 'BCS')
-bcd_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'), sheet = 'BCD')
+bcs_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'),
+                              sheet = 'BCS')
+bcd_dict <- readxl::read_xlsx(here('extdata', 'biochem_dictionary.xlsx'),
+                              sheet = 'BCD')
 expos <- read_csv('extdata/expocodes.csv', show_col_types = FALSE)
 
 # read in original data
@@ -32,7 +34,8 @@ missing_cols <- setdiff(colnames(data), bcd_dict_y$original)
 
 # If there are any such columns, remove them and print a warning
 if (length(missing_cols) > 0) {
-  warning(paste("The following columns were not found in the dictionary and have been removed:", paste(missing_cols, collapse = ", ")))
+  warning(paste("The following columns were not found in the dictionary and have been removed:",
+                paste(missing_cols, collapse = ", ")))
   data <- data[, !(colnames(data) %in% missing_cols)]
 }
 
@@ -51,15 +54,20 @@ bcd_meta <- data[names(data) %in% bcd_dict$biochem[bcd_dict$tag == 'metadata']]
 if (unique(bcd_meta$MISSION_NAME) %in% expos$cruise_name) {
   bcd_meta$MISSION_NAME <- expos$expocode[expos$cruise_name == unique(bcd_meta$MISSION_NAME)]
 } else{
-  warning('EXPOCODE not found, MISSION_NAME was left in original condition! Please add an entry to extdata/expocodes.csv')
+  warning('EXPOCODE not found, MISSION_NAME was left in original condition! \n
+          Please add an entry to extdata/expocodes.csv')
 }
 
 # pad event number to three digits
-bcd_meta$COLLECTOR_EVENT_ID <- str_pad(bcd_meta$COLLECTOR_EVENT_ID, width = 3, pad = '0')
+bcd_meta$COLLECTOR_EVENT_ID <- str_pad(bcd_meta$COLLECTOR_EVENT_ID,
+                                       width = 3,
+                                       pad = '0')
 
 # generate dis_sample_key_value
 bcd_meta <- bcd_meta %>%
-  dplyr::mutate(., DIS_SAMPLE_KEY_VALUE = paste0(MISSION_NAME, '_', COLLECTOR_EVENT_ID, '_', COLLECTOR_SAMPLE_ID))
+  dplyr::mutate(., DIS_SAMPLE_KEY_VALUE = paste0(
+    MISSION_NAME, '_', COLLECTOR_EVENT_ID, '_', COLLECTOR_SAMPLE_ID
+    ))
 
 
 # EVENT_SDATE
@@ -87,6 +95,8 @@ bcd_meta$CREATED_BY <- "Emily O'Grady"
 bcd_meta$DATA_CENTER_CODE <- '20'
 # PROCESS_FLAG = NR
 bcd_meta$PROCESS_FLAG <- 'NR'
+# batch_seq = 0
+bcd_meta$BATCH_SEQ <- '0'
 
 
 # reformat to long data (with flags) ----
@@ -99,10 +109,16 @@ bcd_wide <- cbind(bcd_meta, bcd_data)
 bcd_wide <- bcd_wide %>%
   mutate_at(vars(data_cols), as.numeric)
 
-# seperate column types
-data_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('btl', 'ctd')])]
-qc_cols <- names(bcd_wide)[which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag == 'qc'])]
-metadata_cols <- names(bcd_wide)[-which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('ctd', 'btl', 'qc')])]
+# separate column types
+data_cols <- names(bcd_wide)[
+  which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('btl', 'ctd')])
+  ]
+qc_cols <- names(bcd_wide)[
+  which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag == 'qc'])
+  ]
+metadata_cols <- names(bcd_wide)[
+  -which(names(bcd_wide) %in% bcd_dict$biochem[bcd_dict$tag %in% c('ctd', 'btl', 'qc')])
+  ]
 
 
 # Separate data and qc columns into two dataframes
@@ -110,23 +126,32 @@ data_df <- bcd_wide %>% select(all_of(c(metadata_cols, data_cols)))
 qc_df <- bcd_wide %>% select(all_of(c(metadata_cols, qc_cols)))
 
 # Pivot both dataframes to long format
-data_long <- data_df %>% pivot_longer(cols = all_of(data_cols), names_to = "METHOD", values_to = "DATA_VALUE")
-qc_long <- qc_df %>% pivot_longer(cols = all_of(qc_cols), names_to = "METHOD", values_to = "DATA_QC_CODE")
+data_long <- data_df %>% pivot_longer(cols = all_of(data_cols),
+                                      names_to = "DATA_TYPE_METHOD",
+                                      values_to = "DIS_DETAIL_DATA_VALUE")
+qc_long <- qc_df %>% pivot_longer(cols = all_of(qc_cols),
+                                  names_to = "DATA_TYPE_METHOD",
+                                  values_to = "DIS_DETAIL_DATA_QC_CODE")
 
 # Remove the '_qc' suffix from the METHOD column in the qc_long dataframe
-qc_long$METHOD <- str_remove(qc_long$METHOD, "_qc")
+qc_long$DATA_TYPE_METHOD <- str_remove(qc_long$DATA_TYPE_METHOD, "_qc")
 
 # Join the data and qc dataframes
-bcd_long <- left_join(data_long, qc_long, by = c("METHOD", as.character(metadata_cols)))
+bcd_long <- left_join(data_long, qc_long, by = c("DATA_TYPE_METHOD",
+                                                 as.character(metadata_cols)))
 
 
 # Add more metadata in long format ----
-# DIS_HEADR_GEAR_SEQ
-# generate based on dictionary tag?
+
+# Depth
+# calculate from pressure
+
+# get dis_data_type_seq
+# gather from biochem tables
+
+# add DIS_DATA_NUM (sequentially)
 
 
-# Depth?
-# calculate from pressure?
 
 # translate flags ----
 
