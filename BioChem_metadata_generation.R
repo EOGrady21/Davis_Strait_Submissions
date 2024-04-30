@@ -164,12 +164,31 @@ bcs <- bcs %>%
 bcs$MISSION_DATA_MANAGER_COMMENT <- "Depth calculated from pressure; start depth equals end depth; sounding manually input;"
 
 # gather comment from raw data
+event_comments <- raw_data %>%
+  group_by(event) %>%
+  reframe(EVENT_COLLECTOR_COMMENT1 = str_c(unique(notes), collapse = ';')) 
+
+bcs <- bcs %>%
+  left_join(., event_comments, by = join_by( 'EVENT_COLLECTOR_EVENT_ID' == 'event'))
+
+# initiate NA columns
+na_cols <- bcs_columns[-which(bcs_columns %in% names(bcs))]
+
+if (length(na_cols) > 0) {
+bcs <- bcs %>%
+  mutate(!!!setNames(rep(NA, length(na_cols)), na_cols))
+warning(paste("Empty columns added to BCS file! \n", str_c(na_cols, collapse = '\n')))
+}
+
+
 
 # format & export ----
 bcs_export <- bcs %>%
-  select(any_of(bcs_columns))
+  select(all_of(bcs_columns))
 
-bcs_export <- bcs_export[-which(is.na(bcs_export$MISSION_DESCRIPTOR)), ]
+if (length(which(is.na(bcs_export$MISSION_DESCRIPTOR))) > 0 ) {
+  bcs_export <- bcs_export[-which(is.na(bcs_export$MISSION_DESCRIPTOR)), ]
+}
 
 # export
 bcs_name <- file.path('../data/BioChem/', paste0(unique(bcs_export$MISSION_DESCRIPTOR), '_BCS.csv'))
