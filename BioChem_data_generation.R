@@ -45,7 +45,9 @@ if (length(missing_cols) > 0) {
 data <- data %>% rename_with(~ name_changes[.x], everything())
 
 # remove empty rows
+if (anyNA(data$MISSION_NAME)){
 data <- data[-which(is.na(data$MISSION_NAME)), ]
+}
 
 # gather metadata columns
 bcd_meta <- data[names(data) %in% bcd_dict$biochem[bcd_dict$tag == 'metadata']]
@@ -57,8 +59,8 @@ bcd_meta <- data[names(data) %in% bcd_dict$biochem[bcd_dict$tag == 'metadata']]
 
 # check mission name - adjust to expocode
 if (unique(bcd_meta$MISSION_NAME) %in% expos$cruise_name) {
-  bcd_meta$MISSION_NAME <- expos$expocode[expos$cruise_name == unique(bcd_meta$MISSION_NAME)]
-  bcd_meta$MISSION_DESCRIPTOR <- expos$MEDS[expos$expocode == unique(bcd_meta$MISSION_NAME)]
+  bcd_meta$MISSION_NAME <- expos$biochem_name[expos$cruise_name == unique(bcd_meta$MISSION_NAME)]
+  bcd_meta$MISSION_DESCRIPTOR <- expos$MEDS[expos$biochem_name == unique(bcd_meta$MISSION_NAME)]
   
 } else{
   stop('EXPOCODE not found, MISSION_NAME was left in original condition! \n
@@ -86,28 +88,33 @@ bcd_meta$DIS_HEADER_SDATE <- make_date(bcd_meta$year, bcd_meta$month, bcd_meta$d
 bcd_meta$DIS_HEADER_SDATE <- format(bcd_meta$DIS_HEADER_SDATE, "%d-%b-%y")
 
 # format time TODO Check format
-bcd_meta$DIS_HEADER_STIME <- format(bcd_meta$DIS_HEADER_STIME, "%H%m")
+# manual time reformat CAUTION
+bcd_meta$DIS_HEADER_STIME <- as.numeric(str_sub(gsub(bcd_meta$DIS_HEADER_STIME, pattern = ':', replacement =''), 1, 4))
+# bcd_meta$DIS_HEADER_STIME <- format(strptime(bcd_meta$DIS_HEADER_STIME, format = '%H:%M:%s', tz = 'UTC'), '%H%M')
 
 # remove year month day columns
 bcd_meta <- bcd_meta[-grep(names(bcd_meta), pattern = 'year')]
 bcd_meta <- bcd_meta[-grep(names(bcd_meta), pattern = 'month')]
 bcd_meta <- bcd_meta[-grep(names(bcd_meta), pattern = 'day')]
 
+# remove mission_name column
+bcd_meta <- bcd_meta[-grep(names(bcd_meta), pattern = 'MISSION_NAME')]
+
 # CREATED_DATE
 bcd_meta$CREATED_DATE <- format(Sys.Date(), "%d-%b-%y")
 
 # fill in standard values
 
-# MISSION_INSTITUTE = DFO BIO
-bcd_meta$MISSION_INSTITUTE <- 'DFO-BIO'
+# # MISSION_INSTITUTE = DFO BIO
+# bcd_meta$MISSION_INSTITUTE <- 'DFO-BIO'
 # CREATED_BY = EMILY OGRADY
 bcd_meta$CREATED_BY <- "Emily O'Grady"
 # DATA_CENTER_CODE = 20
 bcd_meta$DATA_CENTER_CODE <- '20'
 # PROCESS_FLAG = NR
 bcd_meta$PROCESS_FLAG <- 'NR'
-# batch_seq = 0
-bcd_meta$BATCH_SEQ <- '0'
+# batch_seq = 1
+bcd_meta$BATCH_SEQ <- '1'
 
 
 # reformat to long data (with flags) ----
@@ -150,7 +157,9 @@ qc_long$DATA_TYPE_METHOD <- str_remove(qc_long$DATA_TYPE_METHOD, "_qc")
 
 # Join the data and qc dataframes
 bcd_long <- left_join(data_long, qc_long, by = c("DATA_TYPE_METHOD",
-                                                 as.character(metadata_cols)))
+                                                 #"DIS_SAMPLE_KEY_VALUE"
+                                                 as.character(metadata_cols)
+                                                 ))
 
 # remove any NA data rows
 bcd_long <- bcd_long %>%
@@ -185,7 +194,7 @@ for (ii in 1:length(bcd_final$DATA_TYPE_METHOD)) {
 }
 
 # add DIS_DATA_NUM 
-bcd_final$DIS_DATA_NUM <- seq(1:length(bcd_final$MISSION_NAME))
+bcd_final$DIS_DATA_NUM <- seq(1:nrow(bcd_final))
 
 # translate flags ----
 for (ii in 1:length(bcd_final$DIS_DETAIL_DATA_QC_CODE)) {
@@ -207,7 +216,6 @@ for (ii in 1:length(bcd_final$DIS_DETAIL_DATA_QC_CODE)) {
 # order columns
 bcd_columns <- c('DIS_DATA_NUM',
                  'MISSION_DESCRIPTOR',
-                 'MISSION_NAME',
                  'EVENT_COLLECTOR_EVENT_ID',
                  'EVENT_COLLECTOR_STN_NAME',
                  'DIS_HEADER_START_DEPTH',
@@ -221,7 +229,6 @@ bcd_columns <- c('DIS_DATA_NUM',
                  'DIS_DETAIL_DATA_VALUE',
                  'DIS_DETAIL_DATA_QC_CODE',
                  'DIS_DETAIL_COLLECTOR_SAMP_ID',
-                 'MISSION_INSTITUTE',
                  'CREATED_BY',
                  'CREATED_DATE',
                  'DATA_CENTER_CODE',
