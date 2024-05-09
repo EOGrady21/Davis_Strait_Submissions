@@ -71,14 +71,19 @@ bcs_columns <- c('DIS_SAMPLE_KEY_VALUE',
 
 # read in all original data sources
 # data
-data_fn <- choose.files(default = '../data', caption = "Select data files: ", multi = TRUE)
-raw_data <- read.csv(data_fn)
+data_fns <- choose.files(default = '../data', caption = "Select raw data files: ", multi = TRUE)
+
+# loop for all data files
+for (i in 1:length(data_fns)) {
+raw_data <- read.csv(data_fns[i])
 # remove empty rows
 # raw_data <- raw_data[-which(is.na(raw_data[,1])), ]
 
 # bcd
 bcd_fn <- choose.files(default = '../data/BioChem',
-                       #caption = paste('Select BCD file for', unique(raw_data$`Cruise ID`), '[', unique(raw_data$year), ']', ':')
+                       caption = paste('Select BCD file for',
+                                       # as.character(unique(raw_data$`Cruise ID`)),
+                                       '[', as.character(na.omit(unique(raw_data$year))), ']', ':')
                        )
 bcd <- read.csv(bcd_fn)
 
@@ -231,4 +236,5 @@ if (length(which(is.na(bcs_export$MISSION_DESCRIPTOR))) > 0 ) {
 # export
 bcs_name <- file.path('../data/BioChem/', paste0(unique(bcs_export$MISSION_DESCRIPTOR), '_BCS.csv'))
 write.csv(bcs_export, bcs_name, row.names = FALSE)
+}
 

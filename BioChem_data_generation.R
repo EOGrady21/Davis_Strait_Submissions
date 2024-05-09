@@ -23,8 +23,6 @@ for (i in 1:length(data_fns)) {
 data <- read_csv(data_fns[i], show_col_types = FALSE)
 # TODO check for empty columns before translating
 
-
-
 # translate columns ----
 bcd_dict_y <- bcd_dict[bcd_dict$original %in% names(data),]
 
@@ -177,7 +175,16 @@ pressure_data$DIS_HEADER_END_DEPTH <- oce::swDepth(pressure_data$DIS_DETAIL_DATA
                                                      latitude = bcd_long$DIS_HEADER_SLON[1])
 pressure_data <- pressure_data %>%
   select(-DIS_DETAIL_DATA_VALUE) %>%
-  distinct(., DIS_SAMPLE_KEY_VALUE, .keep_all = TRUE)
+  distinct(., DIS_SAMPLE_KEY_VALUE, .keep_all = TRUE) %>%
+  mutate(DIS_HEADER_START_DEPTH = round(DIS_HEADER_START_DEPTH, 0)) %>%
+  mutate(DIS_HEADER_END_DEPTH = round(DIS_HEADER_END_DEPTH, 0))
+
+if (min(pressure_data$DIS_HEADER_START_DEPTH, na.rm = TRUE) < 0) {
+  # zero out any erroneously negative depth values
+  pressure_data$DIS_HEADER_START_DEPTH[pressure_data$DIS_HEADER_START_DEPTH < 0] <- 0
+  pressure_data$DIS_HEADER_END_DEPTH[pressure_data$DIS_HEADER_END_DEPTH < 0] <- 0
+  
+}
 
 # join depth data 
 bcd_final <- bcd_long %>%
@@ -196,15 +203,22 @@ for (ii in 1:length(bcd_final$DATA_TYPE_METHOD)) {
 # add DIS_DATA_NUM 
 bcd_final$DIS_DATA_NUM <- seq(1:nrow(bcd_final))
 
+# STOP
 # translate flags ----
 for (ii in 1:length(bcd_final$DIS_DETAIL_DATA_QC_CODE)) {
   lab_qc <- bcd_final$DIS_DETAIL_DATA_QC_CODE[ii]
-  
+  method <- bcd_final$DATA_TYPE_METHOD[ii]
   if (!is.na(lab_qc) && nchar(lab_qc) < 4) { # grab biochem flag from dictionary if lab flag exists
     bc_qc <- flags$BioChem[grep(flags$lab, pattern = str_sub(lab_qc, 1, 2))]
   } else {
     if (is.na(lab_qc)) { # if no flag then assume acceptable
+      # find method - ctd should stay with a 0 QC, btl can get a 1
+      if (method %in% bcd_dict_y$biochem[bcd_dict_y$tag == 'btl']){
       bc_qc <- 1
+      } else {
+        bc_qc <- 0
+      }
+      
     } else if (nchar(lab_qc) > 4) { # if there is text ask for user translation
       bc_qc <- menu(choices = flag_definitions$biochem_definition[flag_definitions$flag > 0 ], 
             title = paste("Translate this QC to BioChem flag: \n", lab_qc))

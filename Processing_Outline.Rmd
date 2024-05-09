@@ -34,3 +34,6 @@ Then BCD and BCS tables were created based on extdata/biochem_dictionary.xlsx
 
 BioChem_data_generation.R
 BioChem_metadata_generation.R
+
+Some manual edits were made that should be coded in to future developments.
+ negative depth values were adjusted to 0
