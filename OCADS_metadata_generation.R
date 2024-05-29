@@ -23,7 +23,7 @@ general_md <- read_xlsx('extdata/DS_OCADS_metadata_KAS.xlsx',
 md_blank <- read_xlsx('extdata/SubmissionForm_OADS_v7.xlsx', sheet = 1, skip = 1)
 md_filled <- md_blank
 
-data_fns <- list.files("../data/OCADS/", pattern = '_data', full.names = TRUE)
+data_fns <- list.files("../data/OCADS/", pattern = '26D420200830_data', full.names = TRUE)
 
 for (i in 1:length(data_fns)) {
   # get associated data file

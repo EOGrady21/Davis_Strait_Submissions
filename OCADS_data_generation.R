@@ -4,7 +4,7 @@ shelf(tidyverse, readr, readxl)
 source('functions.R')
 
 # gather data files ----
-data_fns <- list.files('../data/', pattern = '2021', full.names = TRUE)
+data_fns <- list.files('../data/', pattern = 'EO_v2', full.names = TRUE)
 
 # Load in dependencies
 
