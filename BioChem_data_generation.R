@@ -115,6 +115,16 @@ bcd_meta$PROCESS_FLAG <- 'NR'
 bcd_meta$BATCH_SEQ <- '1'
 
 
+# Add empty columns
+# DIS_DETAIL_DETECTION_LIMIT
+bcd_meta$DIS_DETAIL_DETECTION_LIMIT <- NA
+
+# DIS_DETAIL_DETAIL_COLLECTOR
+bcd_meta$DIS_DETAIL_DETAIL_COLLECTOR <- NA
+
+
+
+
 # reformat to long data (with flags) ----
 
 bcd_data <- data[names(data) %in% bcd_dict$biochem[bcd_dict$tag != 'metadata']]
@@ -228,29 +238,32 @@ for (ii in 1:length(bcd_final$DIS_DETAIL_DATA_QC_CODE)) {
 }
 
 # order columns
-bcd_columns <- c('DIS_DATA_NUM',
-                 'MISSION_DESCRIPTOR',
-                 'EVENT_COLLECTOR_EVENT_ID',
-                 'EVENT_COLLECTOR_STN_NAME',
-                 'DIS_HEADER_START_DEPTH',
-                 'DIS_HEADER_END_DEPTH',
-                 'DIS_HEADER_SLAT',
-                 'DIS_HEADER_SLON',
-                 'DIS_HEADER_SDATE',
-                 'DIS_HEADER_STIME',
-                 'DIS_DETAIL_DATA_TYPE_SEQ',
-                 'DATA_TYPE_METHOD',
-                 'DIS_DETAIL_DATA_VALUE',
-                 'DIS_DETAIL_DATA_QC_CODE',
-                 'DIS_DETAIL_COLLECTOR_SAMP_ID',
-                 'CREATED_BY',
-                 'CREATED_DATE',
-                 'DATA_CENTER_CODE',
-                 'PROCESS_FLAG',
-                 'BATCH_SEQ',
-                 'DIS_SAMPLE_KEY_VALUE'
-)
-
+bcd_columns <-
+  c(
+    "DIS_DATA_NUM",
+    "MISSION_DESCRIPTOR",
+    "EVENT_COLLECTOR_EVENT_ID",
+    "EVENT_COLLECTOR_STN_NAME",
+    "DIS_HEADER_START_DEPTH",
+    "DIS_HEADER_END_DEPTH",
+    "DIS_HEADER_SLAT",
+    "DIS_HEADER_SLON",
+    "DIS_HEADER_SDATE",
+    "DIS_HEADER_STIME",
+    "DIS_DETAIL_DATA_TYPE_SEQ",
+    "DATA_TYPE_METHOD",
+    "DIS_DETAIL_DATA_VALUE",
+    "DIS_DETAIL_DATA_QC_CODE",
+    "DIS_DETAIL_DETECTION_LIMIT",
+    "DIS_DETAIL_DETAIL_COLLECTOR",
+    "DIS_DETAIL_COLLECTOR_SAMP_ID",
+    "CREATED_BY",
+    "CREATED_DATE",
+    "DATA_CENTER_CODE",
+    "PROCESS_FLAG",
+    "BATCH_SEQ",
+    "DIS_SAMPLE_KEY_VALUE"
+  )
 bcd_export <- bcd_final %>%
   select(all_of(bcd_columns))
 # export data file
